@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class devinette {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final int nombreAdeviner = 25;
+        int essais;
+        boolean atrouve = false;
+        while (!atrouve){
+            System.out.println("entrer votre tentative");
+            essais = scanner.nextInt();
+            if (essais == nombreAdeviner){
+                System.out.println("bravo vous avez trouver le nombre a deviner qui est!!!!!!!!!!!"+ nombreAdeviner + ",");
+                atrouve = true;
+            } else if (essais < nombreAdeviner) {
+                System.out.println(" le nombre est plus petit essayer à nouveau!!!!!!!!!!!");
+            }
+            else {
+                System.out.println(" le nombre est plus grand essayer à nouveau!!!!!!!!!!!");
+            }
+        }
+        scanner.close();
+    }
+}

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Factorielle {
+
+    public static void main(String[] args){
+        System.out.println("donner un nombre");
+
+        Scanner Saisie = new Scanner(System.in);
+        int nombre = Saisie.nextInt();
+
+        int factorielle = 1;
+
+        int i = 1;
+        do{
+           factorielle *=i;
+            i++;
+        } while (i <= nombre);
+        System.out.println("La factorielle de :"+nombre+" est :"+factorielle);
+        Saisie.close();
+    }
+
+}

@@ -1,0 +1,21 @@
+public class additionTableaux {
+    public static void main(String[] args){
+        int []tab ={1,2,3};
+        int []tab1 ={4,10,6};
+        if (tab.length != tab1.length) {
+            System.out.println("les tableaux n'ont pas la meme longueur");
+            return;
+        }
+        int []tabResultat = new  int[tab.length];
+        for (int i=0; i<tab.length; i++) {
+            tabResultat[i]=tab[i]+tab1[i];
+        }
+        System.out.println("tableau resultat : [");
+        for (int i=0; i<tabResultat.length; i++) {
+            System.out.println(tabResultat[i]);
+            if (i<tabResultat.length - 1){
+                System.out.print(",");};
+        }
+        System.out.println("]");
+    }
+}

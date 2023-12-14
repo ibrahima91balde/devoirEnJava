@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class bissextile {
+    public static void main(String[] args){
+        Scanner bissextiles = new Scanner(System.in);
+        System.out.println("donner une année :");
+        int annee = bissextiles.nextInt();
+        if(estBissextile(annee)){
+            System.out.println(annee+" est une année bissextile.");
+        }
+        else {
+            System.out.println(annee+" n'est pas une année bissextile.");
+        }
+        bissextiles.close();
+
+
+    }
+    private static boolean estBissextile(int annee){
+        return (annee%4==0 && annee%100!=0) || (annee% 400 == 0);}
+}

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class conditionTypeNombre {
+    public static void main(String[] args){
+        System.out.println("donner un nombre");
+        Scanner Saisie = new Scanner(System.in);
+        int nombre = Saisie.nextInt();
+        if(nombre %2 == 0){
+            System.out.println("le nombre que vous avez donner est un nombre paire");
+        }
+        else {
+            System.out.println("le nombre que vous avez donner est un nombre impair");
+        }
+    }
+}
+
+

@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class moyenneNombre {
+    public static void main(String[] args){
+        System.out.println("donner trois nombres");
+        Scanner Saisie = new Scanner(System.in);
+        float a = Saisie.nextFloat();
+        float b = Saisie.nextFloat();
+        float c = Saisie.nextFloat();
+        float moyenne;
+        moyenne = ((a+b+c) / 3);
+        System.out.println("la moyenne des trois nombres saisie au clavier est :"+moyenne);
+    }
+}

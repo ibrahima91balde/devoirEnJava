@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class variableCOnversion {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("choisissez le type de conversion :");
+        System.out.println("1) celsius en fahrenheit :");
+        System.out.println("2) fahrenheit en celsius :");
+        int choix =scanner.nextInt();
+        switch (choix){
+            case 1:
+                System.out.println("entrer la temperature du degrer celsuis :");
+                double celsuis = scanner.nextDouble();
+                double fahrenheit = celsuisEnfahrenheit(celsuis);
+                System.out.println(celsuis + "dégré celsuis équivalent à :" + fahrenheit + "fahrenheit");
+                break;
+            case 2:
+                System.out.println("entrer la temperature en fahrenheit :");
+                double fahrenheitInput = scanner.nextDouble();
+                double celsuisResult = fahrenheitEncelsuis(fahrenheitInput);
+                System.out.println(fahrenheitInput + "fahrenheit équivalent à :" + celsuisResult + "dégré celsuis");
+                break;
+            default:
+                System.out.println("choix non valide veuillez choisir 1 ou 2");
+        }
+        scanner.close();
+    }
+    public static double celsuisEnfahrenheit(double celsuis){
+        return (celsuis*9/5)+32;
+    }
+    public static double fahrenheitEncelsuis(double fahrenheit){
+        return (fahrenheit-32)*5/9;
+    }
+
+}

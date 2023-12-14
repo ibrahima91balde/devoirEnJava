@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class carréNombre {
+    public static void main(String[] args){
+        System.out.println("donner un nombre");
+        Scanner Saisie = new Scanner(System.in);
+        int nb = Saisie.nextInt();
+        int carrer=nb*nb;
+        System.out.println("le carré du nombre saisie au clavier est :"+carrer);
+    }
+}

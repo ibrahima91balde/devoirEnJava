@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class implementezCalculateur {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("donner le poid du colis en kg :");
+            double poidColis = scanner.nextDouble();
+            double fraisLivraison = calculerFraisLivraison(poidColis);
+            System.out.println("le frais de l'expedition d'un colis de " + poidColis + "kg est de :" + fraisLivraison + " fg");
+            scanner.close();
+        }
+        public static double calculerFraisLivraison(double poids){
+            if (poids<=1){
+                return 5000.0;
+            } else if (poids<=5) {
+                return 1000.0;
+            }
+            else if (poids<=10) {
+                return 15000.0;
+            }
+            else {
+                return 20000;
+            }
+        }
+    }

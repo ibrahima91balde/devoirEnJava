@@ -1,0 +1,92 @@
+import java.util.Scanner;
+public class fusiiondes2tableauxEnUnSeule {
+
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // Demander la taille des deux tableaux à l'utilisateur
+            System.out.print("Entrez la taille du premier tableau : ");
+            int taille1 = scanner.nextInt();
+
+            System.out.print("Entrez la taille du deuxième tableau : ");
+            int taille2 = scanner.nextInt();
+
+            // Créer les deux tableaux triés
+            int[] tableau1 = new int[taille1];
+            int[] tableau2 = new int[taille2];
+
+            System.out.println("Remplissez le premier tableau trié :");
+            remplirTableau(tableau1, scanner);
+
+            System.out.println("Remplissez le deuxième tableau trié :");
+            remplirTableau(tableau2, scanner);
+
+            // Fusionner les deux tableaux triés
+            int[] tableauFusionne = fusionnerTableauxTriés(tableau1, tableau2);
+
+            // Afficher le tableau fusionné trié
+            afficherTableau(tableauFusionne, "Tableau fusionné trié");
+
+            scanner.close();
+        }
+
+        // Méthode pour remplir un tableau avec les valeurs de l'utilisateur
+        private static void remplirTableau(int[] tableau, Scanner scanner) {
+            for (int i = 0; i < tableau.length; i++) {
+                System.out.print("Tableau[" + i + "] : ");
+                tableau[i] = scanner.nextInt();
+            }
+        }
+
+        // Méthode pour fusionner deux tableaux triés en un seul tableau trié
+        private static int[] fusionnerTableauxTriés(int[] tableau1, int[] tableau2) {
+            int taille1 = tableau1.length;
+            int taille2 = tableau2.length;
+            int tailleFusionne = taille1 + taille2;
+            int[] tableauFusionne = new int[tailleFusionne];
+
+            int i = 0, j = 0, k = 0;
+
+            // Fusionner les deux tableaux triés
+            while (i < taille1 && j < taille2) {
+                if (tableau1[i] <= tableau2[j]) {
+                    tableauFusionne[k] = tableau1[i];
+                    i++;
+                } else {
+                    tableauFusionne[k] = tableau2[j];
+                    j++;
+                }
+                k++;
+            }
+
+            // Ajouter les éléments restants du premier tableau
+            while (i < taille1) {
+                tableauFusionne[k] = tableau1[i];
+                i++;
+                k++;
+            }
+
+            // Ajouter les éléments restants du deuxième tableau
+            while (j < taille2) {
+                tableauFusionne[k] = tableau2[j];
+                j++;
+                k++;
+            }
+
+            return tableauFusionne;
+        }
+
+        // Méthode pour afficher un tableau
+        private static void afficherTableau(int[] tableau, String nomTableau) {
+            System.out.print(nomTableau + " : [");
+            for (int i = 0; i < tableau.length; i++) {
+                System.out.print(tableau[i]);
+                if (i < tableau.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println("]");
+        }
+    }
+

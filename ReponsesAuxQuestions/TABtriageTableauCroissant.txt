@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class triageTableauCroissant {
+
+
+        public static void main(String[] args) {
+           Scanner scanner = new Scanner(System.in);
+
+            // Demander la taille du tableau à l'utilisateur
+            System.out.print("Entrez la taille du tableau : ");
+            int taille = scanner.nextInt();
+
+            // Créer le tableau
+            int[] tableau = new int[taille];
+
+            // Remplir le tableau avec les valeurs de l'utilisateur
+            remplirTableau(tableau, scanner);
+
+            // Trier le tableau par ordre croissant
+            trierTableauCroissant(tableau);
+
+            // Afficher le tableau trié
+            afficherTableau(tableau);
+
+            scanner.close();
+        }
+
+        // Méthode pour remplir un tableau avec les valeurs de l'utilisateur
+        private static void remplirTableau(int[] tableau, Scanner scanner) {
+            System.out.println("Remplissez le tableau :");
+            for (int i = 0; i < tableau.length; i++) {
+                System.out.print("Tableau[" + i + "] : ");
+                tableau[i] = scanner.nextInt();
+            }
+        }
+
+        // Méthode pour trier un tableau d'entiers par ordre croissant (Bubble Sort)
+        private static void trierTableauCroissant(int[] tableau) {
+            int n = tableau.length;
+            boolean echange;
+
+            do {
+                echange = false;
+                for (int i = 0; i < n - 1; i++) {
+                    if (tableau[i] > tableau[i + 1]) {
+                        // Échanger les éléments s'ils sont dans le mauvais ordre
+                        int temp = tableau[i];
+                        tableau[i] = tableau[i + 1];
+                        tableau[i + 1] = temp;
+                        echange = true;
+                    }
+                }
+                n--;
+            } while (echange);
+        }
+
+        // Méthode pour afficher un tableau
+        private static void afficherTableau(int[] tableau) {
+            System.out.print("Tableau trié par ordre croissant : [");
+            for (int i = 0; i < tableau.length; i++) {
+                System.out.print(tableau[i]);
+                if (i < tableau.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println("]");
+        }
+
+}

@@ -1,0 +1,15 @@
+public class boucleWhile {
+    public static void main(String[] args){
+        int nb=1;
+
+        int somme=0;
+        while (nb<=100){
+            somme+=nb;
+            nb++;
+            System.out.println(somme);
+        }
+
+
+
+    }
+}

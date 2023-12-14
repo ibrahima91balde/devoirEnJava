@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class conditionMinMax {
+    public static void main(String[] args) {
+        System.out.println("Donner les trois nombres :");
+        Scanner saisie = new Scanner(System.in);
+        int a = saisie.nextInt();
+        int b = saisie.nextInt();
+        int c = saisie.nextInt();
+        int max = (a < b) ? ((b < c) ? c : b) : ((a < c) ? c : a);
+        System.out.println("Le plus grand nombre entre " + a + ",  " + b + " et " + c + " est " + max);
+    }
+}

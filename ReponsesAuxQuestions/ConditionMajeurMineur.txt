@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class conditionMajeurMineur {
+
+        public static void main(String[] args) {
+            System.out.println("donner votre âge :");
+            Scanner Saisie = new Scanner(System.in);
+            int nombre = Saisie.nextInt();
+            if(nombre <=0 ){
+                System.out.println("veuillez donner un âge valide");
+            }
+            else if(nombre >= 18){
+                System.out.println("vous êtes majeur");
+            }
+            else {
+                System.out.println("vous êtes mineur");
+            }
+
+        }
+}
+

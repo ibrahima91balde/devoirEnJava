@@ -1,0 +1,19 @@
+public class plusgrandevaleurEntier {
+    public static void main(String[] args){
+        int []tab ={10,20,5};
+        int plusgrandeValeur = trouverPlusGrandeValeur(tab);
+        System.out.println("la plus grande valeur dans le tableau est :" + plusgrandeValeur);
+    }
+    public static int trouverPlusGrandeValeur(int []tab){
+        if (tab == null || tab.length ==0){
+            throw new IllegalArgumentException("le tableau est vide ou null");
+        }
+        int max = tab[0];
+        for(int i=1; i<tab.length; i++){
+            if (tab[i]>max){
+                max=tab[i];
+            }
+        }
+        return max;
+    }
+}

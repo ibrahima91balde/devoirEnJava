@@ -1,0 +1,21 @@
+import java.util.stream.Stream;
+
+public class occurenceElement {
+    public static void main(String[] args){
+        int []tab = {2,5,8,5,12,5,10,5};
+        int element_rechercher = 5;
+        int occurence = compterOccurence(tab,element_rechercher);
+        System.out.println("nombre d'occurrence de " +element_rechercher+ " dans le tableau est " +occurence);
+
+    }public  static int compterOccurence(int[] tab, int element){
+        int occurence = 0;
+        for (int i=0; i<tab.length; i++){
+            if (tab[i] == element){
+                occurence++;
+            }
+
+        }
+        return occurence;
+    }
+
+}

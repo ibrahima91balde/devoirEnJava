@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class partieB {
+    public static void main(String[] args){
+       final int z;
+        System.out.println("donner les valeurs de x et y");
+        Scanner Saisie = new Scanner(System.in);
+        int x = Saisie.nextInt();
+        int y = Saisie.nextInt();
+        System.out.println("la valeur de x avant echange est :"+x);
+        System.out.println("la valeur de y avant echange est :"+y);
+        System.out.println();
+        z=x;
+        x=y;
+        y=z;
+        System.out.println("la valeur de x après echange est :"+x);
+        System.out.println("la valeur de y après echange est :"+y);
+
+    }
+}

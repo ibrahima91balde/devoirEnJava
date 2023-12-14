@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class surfaceRectangle {
+    public static void main(String[] args){
+        System.out.println("donner la longueur et la largeur");
+        Scanner Saisie = new Scanner(System.in);
+        int Long = Saisie.nextInt();
+        int larg = Saisie.nextInt();
+        int surface;
+        surface = Long*larg;
+        System.out.println("la surface du rectangle est :"+surface);}
+}
